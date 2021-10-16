@@ -35,13 +35,13 @@
 
 ## XSS Challenges Stage #4
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/153544a1-6812-4052-9b78-c23aaa2bca1f/Untitled.png)
+![xss 1](https://user-images.githubusercontent.com/73740089/137585249-656763c7-3aa9-446d-8468-54c62c6df9f2.png)
 
 3번과 똑같은 방식으로 진행을 해봤더니 오류가 났다.
 
 힌트를 살펴보니 보이지 않는 field가 있다고 하길래 소스코드를 살펴보았더니 위의 그림과 같이 소스코드가 히든으로 숨겨겨 있는 것을 확인할 수 있었다.  해당 type을 눈에 보이도록 text로 바꾸고
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a4f667e6-7870-4577-bc21-cb1a330d2a47/Untitled.png)
+![xss2](https://user-images.githubusercontent.com/73740089/137585264-3458131b-6a20-4eee-9c4c-0aef9b7ebdb9.png)
 
 value 값으로 "><script>alert(document.domain);</script><"을 입력하여 XSS공격을 성공시켰다.
 
@@ -49,6 +49,6 @@ value 값으로 "><script>alert(document.domain);</script><"을 입력하여 XSS
 
 이 문제에서는 value에 값이 입력되는 것을 보고 "><script>alert(document.domain);</script>를 입력하려고 했지만 글자가 적히다 말았다. 소스코드를 살펴보니 maxlength를 15로 제한한 것이 원인이었다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb70df31-8545-4627-99fe-9a3acf09bfc7/Untitled.png)
+![xss 3](https://user-images.githubusercontent.com/73740089/137585278-9fbb0908-b1a6-4d12-908a-a467079ebbc4.png)
 
 그래서 maxlength값을 15대신 넉넉하게 70으로 잡고 "><script>alert(document.domain);</script>를 입력하여 XSS공격을 성공시켰다.
