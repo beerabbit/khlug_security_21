@@ -35,7 +35,7 @@
 
 ## XSS Challenges Stage #4
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/153544a1-6812-4052-9b78-c23aaa2bca1f/Untitled.png)
+https://www.notion.so/xss_assignment-50847274f5274d80902fb83c1d655271#0bc6a16ee58c47bcb4780ce2b14d6c25
 
 3번과 똑같은 방식으로 진행을 해봤더니 오류가 났다.
 
