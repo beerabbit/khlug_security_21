@@ -24,7 +24,7 @@
     
     iframe 태그를 이용하여 악성 코드가 포함된 사이트로 세션을 연결해 자동으로 프로그램을 다운로드 시킬 수 있다. 
     
-    <iframe src="악성 코드가 포함된 " name "Click Here" width= "0" height="0" frameborder="0"> </iframe>
+    <iframe src="악성 코드가 포함된 사이트" name "Click Here" width= "0" height="0" frameborder="0"> </iframe>
     
 5. body태그
     
