@@ -16,7 +16,7 @@
     
 3. img태그
     
-    <img src=# onerror="alert('hi')">
+    <#img src=# onerror="alert('hi')">
     
     img 태그를 이용한 공격이다. 고의적으로 없는 src주소를 지정하고 onerror 이벤트를 통해 공격을 실행한다.
     
