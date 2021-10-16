@@ -10,7 +10,7 @@
     
 2. a 태그 
     
-    <a onmouseover="alert('hi')">
+    <a onmouseover="alert()">
     
     a 태그를 이용한 공격이다. onmouseover 이벤트를 통해 공격을 실행한다.
     
