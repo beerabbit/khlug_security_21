@@ -61,13 +61,13 @@ blind sql을 이용해서 내가 제시한 조건이 true 인지 false인지 판
 ```php
 if(($result['pw']) && ($result['pw'] == $_GET['pw'])) solve("orc"); 
 ```
-이걸 보니까 지금까지처럼 id까지 맞추고 pw부분을 주석처리해서 날려버리는 방식이 아니라 진짜로 pw를 알아내야하는 것 같다.
+이걸 보니까 여태껏처럼 id까지 맞춘 후 pw부분을 주석처리해서 날려버리는 방식이 아니라 진짜 pw를 알아내야하는 것 같다.
 
-처음부터 끝까지 brute force를 사용하는것도 가능하겠지만 10년도 더 된 내 컴퓨터가 감당하지 못할것같기 때문에 pw의 길이부터 알아내보자.
+처음부터 끝까지 brute force를 사용하는것도 가능하겠지만 10년도 더 된 내 컴퓨터가 감당하지 못할 것 같기 때문에 pw의 길이부터 알아내보자.
 ```
 ?pw=jnj' or 1=1%23
 ```
-을 해보니까 hello admin이 나온다. 1=1%23부분을 이용해서 pw의 길이를 알아내보자.
+을 해보니까 hello admin이 나온다. 1=1%23부분을 조작해서 pw의 길이를 알아내보자.(blind sql)
 ```
 ?pw=jnj' or length(pw)=X%23
 ```
@@ -87,6 +87,7 @@ if(($result['pw']) && ($result['pw'] == $_GET['pw'])) solve("orc");
 
 사이트를 인용하였다.
 
+#### gremlin으로 테스트
 ```python
 import requests
 
@@ -129,7 +130,9 @@ select id from prob_orc where id='admin' and pw='' or substr(pw,1,1)=0#'
 ```
 이것이기 때문에 id가 무엇인가에는 관계 없이 그저 length(pw)=8의 참 거짓 여부만 참조한다.
 
-아마 내 추측으로는, 이 데이터베이스 속에 admin이 아닌 다른 계정또한 존재하며 이것을 피해가기 위해서는 'id=admin'을 and 문과 엮어 확실히 id가 admin일때의 pw를 구해내야 한다는 것이었다.
+아마 내 추측으로는, 이 데이터베이스 속에 admin이 아닌 다른 계정또한 존재한다는 것이다.
+
+이것을 피해가기 위해서는 'id=admin'을 and 문과 엮어 확실히 id가 admin일때의 pw를 구해내야 할 것 같았다.
 
 그래서 수정된 나의 파이썬 코드는
 ```python
