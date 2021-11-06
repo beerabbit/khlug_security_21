@@ -156,3 +156,18 @@ for i in range(1,9):
 근데 또 안됐다. ???????
 
 대문자 소문자 문제였다. 진짜 pw는 095a9852이다.
+
+
+
+<details>
+<summary>그 외 추가로 이것저것</summary>
+<div markdown="1">
+
+wolfman
+공백을 못쓴다. 강사님의 +쓰라는거 기억나서 써봤는데 안된다. 그냥 tab(%09)로 풀었다.
+
+darkelf
+or이랑 and쓰지 말랜다. 그래서 ||랑 &&썼더니 풀렸다.
+
+</div>
+</details>
